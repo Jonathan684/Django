@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  {% include "superior/Barra.html" %}
+  <header>
+    <img src="img/ima2.jpg" width="80px" height="20px">
+  <!--  <p>Logo corporativo</p>-->
+  </header>
+  <img src="ima1.jpg" />
+  
+  <h4 style = "color:rgb(30, 51, 148)">Hola mi primer django</h4>
+    {# no temas esto no saldra #} <!-- comentario de python en html-->
+    {% comment %}
+      ignora esta parte
+    {% endcomment %}
+    {% if nombre_persona == 'Profesor Jonathan' %}
+      <p>El curso lo imparte el titular</p>
+    {% else %}
+      <p>El curso lo imparte el profesro suplente</p>
+    {% endif %}
+    
+    <p>El nombre del profesor es: {{nombre_persona|lower}} {{segundo_nombre}} {{apellido_persona}}</p>
+    <p>Estamos viendo el tema de las plantillas en el d&iacute;a: {{momento_actual.day}}
+      /{{momento_actual.month}}/{{momento_actual.year}}
+    </p>
+    <p><strong>Temas de curso:</strong></p>
+    <p>
+      <ul>
+        {%if temas %}
+          
+          {% for elTema in temas %}
+
+            <li>{{elTema|first}}</li>
+          
+          {% endfor %}
+        
+        {%else%}
+          <p>No hay elementos que mostrar</p>
+        {% endif %}
+        
+      </ul>
+    </p>
+</body>
+</html>
+
+<!--
+<html>
+  <body>
+    <h4 style = "color:rgb(30, 51, 148)">Hola mi primer django</h4>
+    <p>El nombre del profesor es: {{nombre_persona}} {{segundo_nombre}} {{apellido_persona}}</p>
+    <p>Estamos viendo el tema de las plantillas en el d&iacute;a: {{momento_actual.day}}
+      /{{momento_actual.month}}/{{momento_actual.year}}
+    </p>
+  </body>
+  </html>
+-->

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>
+
+      {% block title %} {% endblock %}
+
+    </title>
+    <style>
+      .titulo{
+        text-align: center;
+        background-color: rgb(30, 156, 57);
+        color : white;
+        
+      }
+      .derecha{
+        text-align:right
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class ="titulo">Píldoras Informaticas</h1>
+    {% include "superior/Barra.html" %}
+    <h3 style="text-align: right;">Cursos de programacion, ofimatica y diseño web</h3>
+    
+    {% block content %}
+
+    {% endblock %}
+    <p class ="titulo derecha">Cursos gratuitos, Gracias por su visita.</p>
+  </body>
+</html>

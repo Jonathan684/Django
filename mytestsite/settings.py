@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-79pzd!_1kua^ssa)na43=cl&$o68nllx7f2vozx^qq+@nsl(pe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'mytestsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/jonathan/mytestsite/mytestsite/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +121,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
